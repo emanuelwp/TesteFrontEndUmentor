@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enviar Feedbacks - Umentor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="./css/enviarFeedbacks.css">
+</head>
+
+<body>
+  <div class="sidebar" id="sidebar"> <!--Sidebar-->
+    <div class="sidebar-header">
+      <div class="logo">
+        <img src="./images/logoUmentor.png" alt="Logo Umentor">
+      </div>
+      <button class="toggle-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div class="sidebar-content">
+      <div class="section-title">
+        Feedbacks
+      </div>
+      <a href="index.html">
+        <div class="menu-item">
+          <div class="menu-icon"><i style="color: black;" class="fa-solid fa-chart-simple"></i></div>
+          <div class="text-sidebar" style="color: black;">Dashboard</div>
+        </div>
+      </a>
+
+      <a href="enviarFeedbacks.html">
+        <div class="menu-item active">
+          <div class="side-button"><i class="fa-solid fa-paper-plane"></i></div>
+          <div class="text-sidebar">Enviar Feedback</div>
+        </div>
+      </a>
+
+      <a href="historicoFeedbacks.html">
+        <div class="menu-item">
+          <div class="side-button"><i style="color: black;" class="fa-solid fa-clock-rotate-left"></i></div>
+          <div class="text-sidebar" style="color: black;">Histórico</div>
+        </div>
+      </a>
+    </div>
+    <div class="user-section">
+      <div class="user-avatar">
+        <img src="./images/fotoParaPerfil.jpg" alt="Avatar">
+      </div>
+      <div class="user-info">
+        <div class="user-name">Emanuel Wagner Pereira</div>
+        <div class="user-email">emanuelwp0@gmail.com</div>
+      </div>
+    </div>
+  </div>
+  <button class="toggle-sidebar-btn" id="toggleSidebarBtn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="content">
+    <div class="header">Enviar Feedback</div>
+
+    <div class="feedback-form-container">
+      <div class="card tips-card"><!--Card de dicas-->
+        <div class="card-title">Dicas para um bom feedback</div>
+        <div class="tips-content">
+          <div class="tip-item">
+            <div class="tip-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <div class="tip-text">
+              <h4>Seja específico</h4>
+              <p>Mencione situações e comportamentos específicos em vez de generalizações.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="tip-text">
+              <h4>Seja equilibrado</h4>
+              <p>Inclua pontos positivos e oportunidades de melhoria no seu feedback.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <div class="tip-text">
+              <h4>Seja construtivo</h4>
+              <p>Ofereça sugestões práticas para melhorias, não apenas críticas.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon"><i class="fa-solid fa-heart"></i></div>
+            <div class="tip-text">
+              <h4>Seja respeitoso</h4>
+              <p>Mantenha um tom positivo e respeitoso, mesmo ao dar críticas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card feedback-card"><!--Card para o envio do feedback-->
+        <div class="card-title">Novo Feedback</div>
+        <form class="feedback-form">
+          <div class="form-group"><!--Input de destinatário-->
+            <label for="destinatario">Destinatário</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-user"></i>
+              <select id="destinatario">
+                <option value="">Selecione o destinatário</option>
+                <option value="atendimento">Pedro</option>
+                <option value="produto">Cláudia</option>
+                <option value="entrega">João</option>
+                <option value="suporte">Marcos</option>
+                <option value="marketing">Maria</option>
+                <option value="vendas">Arthur</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group"><!--Input de área-->
+            <label for="area">Área</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-building"></i>
+              <select id="area">
+                <option value="">Selecione a área</option>
+                <option value="atendimento">Atendimento</option>
+                <option value="produto">Produto</option>
+                <option value="entrega">Entrega</option>
+                <option value="suporte">Suporte</option>
+                <option value="marketing">Marketing</option>
+                <option value="vendas">Vendas</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group"><!--Input de tipo-->
+            <label for="tipo">Tipo de Feedback</label>
+            <div class="feedback-types">
+              <div class="option-elogio feedback-type-option">
+                <input type="radio" id="elogio" name="tipo" value="elogio">
+                <label for="elogio" class="feedback-type elogio">
+                  <i class="fa-solid fa-thumbs-up"></i>
+                  <span>Elogio</span>
+                </label>
+              </div>
+              <div class="option-sugestao feedback-type-option">
+                <input type="radio" id="sugestao" name="tipo" value="sugestao">
+                <label for="sugestao" class="feedback-type sugestao">
+                  <i class="fa-solid fa-lightbulb"></i>
+                  <span>Sugestão</span>
+                </label>
+              </div>
+              <div class="option-critica feedback-type-option">
+                <input type="radio" id="critica" name="tipo" value="critica">
+                <label for="critica" class="feedback-type critica">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <span>Crítica</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group"><!--Input de ranking-->
+            <label for="avaliacao">Avaliação</label>
+            <div class="rating-selector">
+              <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1"><i class="fa-solid fa-star"></i></label>
+              </div>
+              <div class="rating-text">Avalie a sua satisfação entre 1 e 5 estrelas.</div>
+            </div>
+          </div>
+
+          <div class="form-group"><!--Input de mensagem-->
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" rows="6" placeholder="Escreva seu feedback detalhado aqui..."></textarea>
+          </div>
+
+          <div class="form-group attachments"><!--Input de anexos-->
+            <label>Anexos (opcional)</label>
+            <div class="attachment-dropzone">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <p>Arraste arquivos aqui ou <span class="upload-link">clique para selecionar</span></p>
+              <input type="file" id="file-upload" multiple hidden>
+            </div>
+            <div class="attached-files">
+            </div>
+          </div>
+
+          <div class="form-group form-actions">
+            <button type="button" class="btn btn-secondary">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Enviar Feedback</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+<script src="javascript/enviarFeedbacks.js"></script>

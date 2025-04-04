@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico de Feedbacks - Umentor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="./css/historicoFeedbacks.css">
+</head>
+
+<body>
+  <div class="sidebar" id="sidebar"> <!--Sidebar-->
+    <div class="sidebar-header">
+      <div class="logo">
+        <img src="./images/logoUmentor.png" alt="Logo Umentor">
+      </div>
+      <button class="toggle-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div class="sidebar-content">
+      <div class="section-title">
+        Feedbacks
+      </div>
+      <a href="index.html">
+        <div class="menu-item">
+          <div class="menu-icon"><i style="color: black;" class="fa-solid fa-chart-simple"></i></div>
+          <div class="text-sidebar" style="color: black;">Dashboard</div>
+        </div>
+      </a>
+
+      <a href="enviarFeedbacks.html">
+        <div class="menu-item">
+          <div class="side-button"><i style="color: black;" class="fa-solid fa-paper-plane"></i></div>
+          <div class="text-sidebar" style="color: black;">Enviar Feedback</div>
+        </div>
+      </a>
+
+      <a href="historicoFeedbacks.html">
+        <div class="menu-item active">
+          <div class="side-button"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <div class="text-sidebar">Histórico</div>
+        </div>
+      </a>
+    </div>
+    <div class="user-section">
+      <div class="user-avatar">
+        <img src="./images/fotoParaPerfil.jpg" alt="Avatar">
+      </div>
+      <div class="user-info">
+        <div class="user-name">Emanuel Wagner Pereira</div>
+        <div class="user-email">emanuelwp0@gmail.com</div>
+      </div>
+    </div>
+  </div>
+  <button class="toggle-sidebar-btn" id="toggleSidebarBtn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="content">
+    <div class="header">Histórico de Feedbacks</div>
+    <div class="layout">
+      <div class="filters-container"><!--Card de filtros-->
+        <div class="card filters-card">
+          <div class="card-title">Filtros</div>
+          <form class="filters-form">
+            <div class="filters-row">
+              <div class="form-group">
+                <label for="data-inicio">Data Início</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-calendar"></i>
+                  <input type="date" id="data-inicio">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="data-fim">Data Fim</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-calendar"></i>
+                  <input type="date" id="data-fim">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="tipo-feedback">Tipo</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-filter"></i>
+                  <select id="tipo-feedback">
+                    <option value="">Todos</option>
+                    <option value="elogio">Elogio</option>
+                    <option value="sugestao">Sugestão</option>
+                    <option value="critica">Crítica</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="status-feedback">Status</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-filter"></i>
+                  <select id="status-feedback">
+                    <option value="">Todos</option>
+                    <option value="enviado">Enviado</option>
+                    <option value="pendente">Pendente</option>
+                    <option value="respondido">Respondido</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group submit-filters">
+                <button type="submit" class="btn btn-primary">Aplicar Filtros</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="results-container"><!--Card da tabela-->
+        <div class="card results-card">
+          <div class="card-title">
+            <div>Feedbacks</div>
+            <div class="results-count">23 resultados encontrados</div>
+          </div>
+
+          <div class="table-container">
+            <table class="feedbacks-table">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Destinatário</th>
+                  <th>Área</th>
+                  <th>Tipo</th>
+                  <th>Avaliação</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>04/04/2025</td>
+                  <td>Pedro</td>
+                  <td>Atendimento</td>
+                  <td><span class="badge elogio">Elogio</span></td>
+                  <td>
+                    <div class="stars-display">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </td>
+                  <td><span class="status-badge respondido">Respondido</span></td>
+                  <td>
+                    <button class="action-btn view-btn" data-id="1" title="Visualizar"><i
+                        class="fa-solid fa-eye"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>02/04/2025</td>
+                  <td>Cláudia</td>
+                  <td>Produto</td>
+                  <td><span class="badge sugestao">Sugestão</span></td>
+                  <td>
+                    <div class="stars-display">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                  </td>
+                  <td><span class="status-badge pendente">Pendente</span></td>
+                  <td>
+                    <button class="action-btn view-btn" data-id="2" title="Visualizar"><i
+                        class="fa-solid fa-eye"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>01/04/2025</td>
+                  <td>João</td>
+                  <td>Entrega</td>
+                  <td><span class="badge critica">Crítica</span></td>
+                  <td>
+                    <div class="stars-display">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                  </td>
+                  <td><span class="status-badge enviado">Enviado</span></td>
+                  <td>
+                    <button class="action-btn view-btn" data-id="3" title="Visualizar"><i
+                        class="fa-solid fa-eye"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>28/03/2025</td>
+                  <td>Maria</td>
+                  <td>Marketing</td>
+                  <td><span class="badge elogio">Elogio</span></td>
+                  <td>
+                    <div class="stars-display">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                  </td>
+                  <td><span class="status-badge respondido">Respondido</span></td>
+                  <td>
+                    <button class="action-btn view-btn" data-id="4" title="Visualizar"><i
+                        class="fa-solid fa-eye"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>25/03/2025</td>
+                  <td>Arthur</td>
+                  <td>Vendas</td>
+                  <td><span class="badge sugestao">Sugestão</span></td>
+                  <td>
+                    <div class="stars-display">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                  </td>
+                  <td><span class="status-badge enviado">Enviado</span></td>
+                  <td>
+                    <button class="action-btn view-btn" data-id="5" title="Visualizar"><i
+                        class="fa-solid fa-eye"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pagination"><!--Paginação -->
+            <button class="pagination-btn" disabled><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="modal" id="feedbackDetailsModal"><!--Modal de detalhes do feedback -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Detalhes do Feedback</h2>
+        <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="feedback-info">
+          <div class="info-group"><!--DAta-->
+            <div class="info-label">Data de Envio:</div>
+            <div class="info-value"></div>
+          </div>
+          <div class="info-group"><!--Destinatario-->
+            <div class="info-label">Destinatário:</div>
+            <div class="info-value"></div>
+          </div>
+          <div class="info-group"><!--Área-->
+            <div class="info-label">Área:</div>
+            <div class="info-value"></div>
+          </div>
+          <div class="info-group"><!--Tipo-->
+            <div class="info-label">Tipo:</div>
+            <div class="info-value"><span class="badge elogio"></span></div>
+          </div>
+          <div class="info-group"><!--Avaliação-->
+            <div class="info-label">Avaliação:</div>
+            <div class="info-value">
+              <div class="stars-display">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="info-group"> <!--Status-->
+            <div class="info-label">Status:</div>
+            <div class="info-value"><span class="status-badge respondido">Respondido</span></div>
+          </div>
+        </div>
+
+        <div class="message-container">
+          <h3>Mensagem:</h3>
+          <div class="message-content">
+            <p>Gostaria de elogiar o atendimento do Pedro. Ele foi extremamente atencioso e resolveu meu problema
+              rapidamente. Sua paciência e conhecimento técnico foram fundamentais para solucionar minha dúvida.
+              Recomendo fortemente seus serviços!</p>
+          </div>
+        </div>
+
+        <div class="attachments-container">
+          <h3>Anexos:</h3>
+          <div class="attachments-list">
+            <div class="attachment-item">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span>evidencia-atendimento.pdf</span>
+              <button class="download-btn"><i class="fa-solid fa-download"></i></button>
+            </div>
+            <div class="attachment-item">
+              <i class="fa-solid fa-file-image"></i>
+              <span>screenshot-conversa.jpg</span>
+              <button class="download-btn"><i class="fa-solid fa-download"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="response-container">
+          <h3>Resposta:</h3>
+          <div class="response-content">
+            <p>Olá! Agradeço muito pelo seu feedback positivo sobre meu atendimento. Fico extremamente feliz em saber
+              que pude ajudar e que a experiência foi satisfatória. Estarei sempre à disposição para auxiliar no que for
+              necessário. Muito obrigado!</p>
+            <div class="response-footer">
+              <div class="response-date">Respondido em: 05/04/2025 às 09:15</div>
+              <div class="responder">Pedro</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary close-btn">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+
+<script src="./javascript/historicoFeedbacks.js"></script>

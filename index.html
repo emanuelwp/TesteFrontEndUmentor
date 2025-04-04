@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Feedbacks - Umentor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar"> <!--Sidebar-->
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="./images/logoUmentor.png" alt="Logo Umentor">
+            </div>
+            <button class="toggle-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        <div class="sidebar-content">
+            <div class="section-title">
+                Feedbacks
+            </div>
+            <a href="index.html">
+                <div class="menu-item active">
+                    <div class="menu-icon"><i class="fa-solid fa-chart-simple"></i></div>
+                    <div class="text-sidebar">Dashboard</div>
+                </div>
+            </a>
+
+            <a href="enviarFeedbacks.html">
+                <div class="menu-item">
+                    <div class="side-button"><i style="color: black;" class="fa-solid fa-paper-plane"></i></div>
+                    <div class="text-sidebar" style="color: black;">Enviar Feedback</div>
+                </div>
+            </a>
+
+            <a href="historicoFeedbacks.html">
+                <div class="menu-item">
+                    <div class="side-button"><i style="color: black;" class="fa-solid fa-clock-rotate-left"></i></div>
+                    <div class="text-sidebar" style="color: black;">Histórico</div>
+                </div>
+            </a>
+
+        </div>
+        <div class="user-section">
+            <div class="user-avatar">
+                <img src="./images/fotoParaPerfil.jpg" alt="Avatar">
+            </div>
+            <div class="user-info">
+                <div class="user-name">Emanuel Wagner Pereira</div>
+                <div class="user-email">emanuelwp0@gmail.com</div>
+            </div>
+        </div>
+    </div>
+    <button class="toggle-sidebar-btn" id="toggleSidebarBtn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i>
+    </button>
+
+
+    <div class="content">
+        <div class="header">Dashboard</div> <!--Conteúdo do módulo -->
+        <div class="dashboard-grid">
+            <div class="card"> <!-- Cardd de satisfaação geral em pizza-->
+                <div class="card-title">Percentual de satisfação geral</div>
+                <div style="display: flex;">
+                    <div style="flex: auto;">
+                        <div class="pie-chart"></div>
+                    </div>
+                    <div style="flex: auto; display: flex; flex-direction: column;">
+                        <div class="satisfaction-label">
+                            <span class="color-indicator" style="background-color: #4CAF50;"></span>
+                            <span>Ótimo</span>
+                            <span class="percentage">52.1%</span>
+                        </div>
+                        <div class="satisfaction-label">
+                            <span class="color-indicator" style="background-color: #8BC34A;"></span>
+                            <span>Bom</span>
+                            <span class="percentage">13.9%</span>
+                        </div>
+                        <div class="satisfaction-label">
+                            <span class="color-indicator" style="background-color: #FFEB3B;"></span>
+                            <span>Neutro</span>
+                            <span class="percentage">12.8%</span>
+                        </div>
+                        <div class="satisfaction-label">
+                            <span class="color-indicator" style="background-color: #FFC107;"></span>
+                            <span>Ruim</span>
+                            <span class="percentage">11.2%</span>
+                        </div>
+                        <div class="satisfaction-label">
+                            <span class="color-indicator" style="background-color: #F44336;"></span>
+                            <span>Péssimo</span>
+                            <span class="percentage">10.0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card rating-card"> <!-- Card de ranking geral-->
+                <div class="card-title">Ranking de satisfação</div>
+                <div class="rating">4.3</div>
+                <div class="stars">★★★★☆</div>
+
+            </div>
+
+            <div class="card"> <!-- Card de mais geral de mais elogiados etc-->
+                <div class="navigation">
+                    <button class="nav-button">&lt;</button>
+                    <h3 class="card-title-chart">Áreas com mais Elogios</h3>
+                    <button class="nav-button">&gt;</button>
+                </div>
+                <div class="area-chart">
+                    <div class="area-item">
+                        <span class="area-name">Vendas</span>
+                        <div class="area-bar" style="width: 80%;"></div>
+                    </div>
+                    <div class="area-item">
+                        <span class="area-name">Marketing</span>
+                        <div class="area-bar" style="width: 75%;"></div>
+                    </div>
+                    <div class="area-item">
+                        <span class="area-name">Suporte</span>
+                        <div class="area-bar" style="width: 70%;"></div>
+                    </div>
+                    <div class="area-item">
+                        <span class="area-name">Produto</span>
+                        <div class="area-bar" style="width: 65%;"></div>
+                    </div>
+                    <div class="area-item">
+                        <span class="area-name">Atendimento</span>
+                        <div class="area-bar" style="width: 60%;"></div>
+                    </div>
+                    <div class="area-item">
+                        <span class="area-name">Entrega</span>
+                        <div class="area-bar" style="width: 55%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedbacks-card"> <!-- Card com quantidade de feedbacks enviados e recebidos-->
+
+                <div class="card"> <!--Card com feedbacks recebidos-->
+                    <div class="count-label">Feedbacks Recebidos</div>
+                    <div class="feedback-count">153</div>
+                </div>
+                <div class="card"> <!--Card com feedbacks enviados-->
+                    <div class="count-label">Feedbacks Enviados</div>
+                    <div class="feedback-count">21</div>
+                </div>
+
+            </div>
+
+            <div class="card area-chart-card"> <!--Card do grafico com qunatidade de feedback por area-->
+                <div class="card-title">Quantidade de Feedbacks por área</div>
+                <div class="bar-chart">
+                    <div class="bar-container">
+                        <div class="bar" style="height: 50px;"></div>
+                        <div class="bar-label">Atendimento</div>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar" style="height: 70px;"></div>
+                        <div class="bar-label">Produto</div>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar" style="height: 90px;"></div>
+                        <div class="bar-label">Entrega</div>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar" style="height: 110px;"></div>
+                        <div class="bar-label">Suporte</div>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar" style="height: 130px;"></div>
+                        <div class="bar-label">Marketing</div>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar" style="height: 150px;"></div>
+                        <div class="bar-label">Vendas</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card activities-card"> <!--Card de ultimas atividades-->
+                <div class="card-title">Últimas atividades</div>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon green">
+                            ✓
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Novo Feedback recebido</div>
+                            <div class="activity-time">Há 2 horas</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon yellow">
+                            💡
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Maria Respondeu ao seu Feedback</div>
+                            <div class="activity-time">Há 2 horas</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon red">
+                            ⚠
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Novo Feedback recebido</div>
+                            <div class="activity-time">Há 3 horas</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon green">
+                            ✓
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Pedro Respondeu ao seu Feedback</div>
+                            <div class="activity-time">Há 4 horas</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon yellow">
+                            💡
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Novo Feedback recebido</div>
+                            <div class="activity-time">Há 5 horas</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon red">
+                            ⚠
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Cláudia Respondeu ao seu Feedback</div>
+                            <div class="activity-time">Há 7 horas</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon green">
+                            ✓
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Novo Feedback recebido</div>
+                            <div class="activity-time">Há 9 horas</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon yellow">
+                            💡
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">João Respondeu ao seu Feedback</div>
+                            <div class="activity-time">Há 18 horas</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon red">
+                            ⚠
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Novo Feedback recebido</div>
+                            <div class="activity-time">Há 24 horas</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <div class="nav-button">
+                        &lt;
+                    </div>
+                    <div>1/10</div>
+                    <div class="nav-button">
+                        &gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<script src="javascript/index.js"></script>

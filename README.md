@@ -70,3 +70,11 @@ TesteFrontEnd/
 
 Este projeto foi desenvolvido como uma interface frontend para um teste de uma vaga e pode necessitar de integração com APIs ou backend para funcionalidade completa em ambiente de produção.
 
+# Figma
+https://www.figma.com/design/x1M7FMPba43fxHkfhWo9kD/Teste-FrontEnd?node-id=108-25217&t=VVgOEOdd1IydWOod-1
+
+# Deploy
+https://teste-front-end-umentor.vercel.app
+
+
+

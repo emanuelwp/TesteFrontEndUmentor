@@ -424,7 +424,6 @@ function addStyles() {
 
 //Event Listeners
 document.addEventListener('DOMContentLoaded', function () {
-  initSidebar();
   initStarRating();
   initFileUpload();
   initFormValidation();
